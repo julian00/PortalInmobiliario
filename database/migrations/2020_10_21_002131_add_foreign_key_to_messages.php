@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCurrenciesTable extends Migration
+class AddForeignKeyToMessages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('currencies', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->timestamps();
-            $table->string('currency',7);
+        Schema::table('messages', function (Blueprint $table) {
+            $table->foreignId('id_user_send')->references('id')->on('users');
+            $table->foreignId('id_user_receive')->references('id')->on('users');
         });
     }
 
@@ -27,6 +26,8 @@ class CreateCurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('currencies');
+        Schema::table('messages', function (Blueprint $table) {
+            //
+        });
     }
 }

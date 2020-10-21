@@ -14,9 +14,9 @@ class CreateDeedsDetailsTable extends Migration
     public function up()
     {
         Schema::create('deeds_details', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id')->autoIncrement();
             $table->timestamps();
-            $table->string('detail');
+            $table->text('detail');
         });
     }
 

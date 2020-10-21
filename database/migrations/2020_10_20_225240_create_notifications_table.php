@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCurrenciesTable extends Migration
+class CreateNotificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('currencies', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
+        Schema::create('notifications', function (Blueprint $table) {
+            //el mensaje dice si la propiedad cambio el valor, se vendio, etc
+            $table->text('message');
             $table->timestamps();
-            $table->string('currency',7);
         });
     }
 
@@ -27,6 +27,6 @@ class CreateCurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('currencies');
+        Schema::dropIfExists('notifications');
     }
 }

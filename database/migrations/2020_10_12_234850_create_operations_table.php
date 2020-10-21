@@ -14,9 +14,10 @@ class CreateOperationsTable extends Migration
     public function up()
     {
         Schema::create('operations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('id')->autoIncrement();
             $table->string('operation',15);
+            $table->timestamps();
+            
         });
     }
 

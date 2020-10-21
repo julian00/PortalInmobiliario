@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCurrenciesTable extends Migration
+class AddForeignKeyToDeedsDetails extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateCurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('currencies', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->timestamps();
-            $table->string('currency',7);
+        Schema::table('deeds_details', function (Blueprint $table) {
+            $table->foreignId('id_ownership')->references('id')->on('ownerships');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateCurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('currencies');
+        Schema::table('=dees_details', function (Blueprint $table) {
+            //
+        });
     }
 }

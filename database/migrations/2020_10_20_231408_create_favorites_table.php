@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCurrenciesTable extends Migration
+class CreateFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('currencies', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
+        Schema::create('favorites', function (Blueprint $table) {
+            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_ownership')->references('id')->on('ownerships');
             $table->timestamps();
-            $table->string('currency',7);
         });
     }
 
@@ -27,6 +27,6 @@ class CreateCurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('currencies');
+        Schema::dropIfExists('favorites');
     }
 }

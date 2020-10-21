@@ -14,21 +14,21 @@ class CreateOwnershipsTable extends Migration
     public function up()
     {
         Schema::create('ownerships', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id')->autoIncrement();
             $table->timestamps();
             $table->tinyInteger('ambiences');
             $table->tinyInteger('bedrooms');
             $table->tinyInteger('bathrooms');
-            $table->year('yearOfConstruction');
+            $table->year('year_of_construction');
             $table->boolean('plans');
-            $table->smallInteger('metersBuilt')->unsigned();
-            $table->smallInteger('totalMeters')->unsigned();
+            $table->smallInteger('meters_built')->unsigned();
+            $table->smallInteger('total_meters')->unsigned();
             $table->mediumInteger('price');
             $table->smallInteger('expenses')->unsigned();
             $table->tinyInteger('garages');
             $table->boolean('deed');
-            $table->boolean('gasWorkADay');
-            //poner escribania en otra tabla
+            $table->boolean('gas_work_a_day');
+            $table->string('writing_desk',45);
         });
     }
 

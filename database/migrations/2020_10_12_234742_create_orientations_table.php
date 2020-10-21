@@ -14,7 +14,7 @@ class CreateOrientationsTable extends Migration
     public function up()
     {
         Schema::create('orientations', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id')->autoIncrement();
             $table->timestamps();
             $table->string('orientation',20);
         });
