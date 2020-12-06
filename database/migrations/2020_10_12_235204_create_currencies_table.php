@@ -17,6 +17,7 @@ class CreateCurrenciesTable extends Migration
             $table->unsignedBigInteger('id')->autoIncrement();
             $table->timestamps();
             $table->string('currency',7);
+            $table->string('symbol',3);
         });
     }
 

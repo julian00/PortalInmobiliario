@@ -13,7 +13,7 @@ class CreateOwnershipServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ownerServices', function (Blueprint $table) {
+        Schema::create('owner_services', function (Blueprint $table) {
             $table->foreignId('id_ownership')->references('id')->on('ownerships');
             $table->foreignId('id_service')->references('id')->on('services');
         });
@@ -26,6 +26,6 @@ class CreateOwnershipServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ownerServices');
+        Schema::dropIfExists('owner_services');
     }
 }
