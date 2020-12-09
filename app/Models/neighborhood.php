@@ -13,9 +13,13 @@ class neighborhood extends Model
 
     public $timestamps = false;
 
+    //dentro de fillable defino los datos que se guardan en la bbdd
     protected $fillable=[
         'neighborhood'
     ];
+
+    //campos protegidos
+    protected $guarded=[];
 
     protected $hidden = [
         'id',

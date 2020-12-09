@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use App\Http\Livewire\Neighborhoods;
 use App\Models\neighborhood;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreNeighborhood;
 
 class NeighborhoodController extends Controller
 {
@@ -28,17 +29,18 @@ class NeighborhoodController extends Controller
         return view('neighborhoods.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreNeighborhood $request)
     {
-        //valida el formulario
-        $request->validate([
-            'neighborhood' => 'required|max:45'
-        ]);
-
-        $neighborhood = new neighborhood();
+        /*$neighborhood = new neighborhood();
 
         $neighborhood->neighborhood = $request->neighborhood;
-        $neighborhood->save();
+        $neighborhood->save();*/
+
+        //asignaacion masiva
+        /*$neighborhood = neighborhood::create([
+            'neighborhood' => $request->neighborhood
+        ]);*/
+        $neighborhood = neighborhood::create(request()->all());
 
         return redirect() -> route('neighborhoods.index');
     }
@@ -55,8 +57,16 @@ class NeighborhoodController extends Controller
             'neighborhood' => 'required|max:45'
         ]);
 
-        $neighborhood->neighborhood =$request->neighborhood;
-        $neighborhood->save();
+        /*$neighborhood->neighborhood =$request->neighborhood;
+        $neighborhood->save();*/
+        $neighborhood->update($request->all());
+
         return redirect() -> route('neighborhoods.index');
+    }
+
+    public function destroy(neighborhood $neighborhood)
+    {
+        $neighborhood->delete();
+        return redirect()->route('neighborhoods.index');
     }
 }

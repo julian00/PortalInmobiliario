@@ -12,6 +12,12 @@
             <li>
                 <a href="{{ route('neighborhoods.show', $neighborhood->id) }}">{{ $neighborhood->neighborhood }}</a>
                 <a class="bg-yellow-300" href="{{ route('neighborhoods.edit', $neighborhood) }}" >Editar</a>
+
+                <form action="{{ route('neighborhoods.destroy', $neighborhood) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="bg-red-600">Eliminar</button>
+                </form>
             </li>
         @endforeach
     </ul>

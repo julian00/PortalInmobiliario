@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\NeighborhoodController;
-use App\Http\Controllers\NeighborhoodCotroller;
 use App\Http\Livewire\Neighborhoods;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +24,7 @@ Route::get('/neighborhoods/create',[NeighborhoodController::class, 'create'])->n
 Route::post('/neighborhoods/store',[NeighborhoodController::class, 'store'])->name('neighborhoods.store');
 Route::get('/neighborhoods/edit/{neighborhood}',[NeighborhoodController::class, 'edit'])->name('neighborhoods.edit');
 Route::put('/neighborhoods/update/{neighborhood}',[NeighborhoodController::class, 'update'])->name('neighborhoods.update');
+Route::delete('/neighborhoods/{neighborhood}',[NeighborhoodController::class, 'destroy'])->name('neighborhoods.destroy');
 Route::get('/neighborhoods/{id}',[NeighborhoodController::class, 'show'])->name('neighborhoods.show');
 
 //Route::get('/admin/items',[ItemController::class,'index'])->name('admin.items');
