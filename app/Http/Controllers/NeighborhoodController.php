@@ -17,10 +17,8 @@ class NeighborhoodController extends Controller
         return view('neighborhoods.index',compact('neighborhoods'));
     }
 
-    public function show($id)
+    public function show(neighborhood $neighborhood)
     {
-        $neighborhood = neighborhood::find($id);
-        //return $neighborhood;
         return view('neighborhoods.show', compact('neighborhood'));
     }
 

@@ -24,4 +24,9 @@ class neighborhood extends Model
     protected $hidden = [
         'id',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

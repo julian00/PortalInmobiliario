@@ -20,7 +20,6 @@ class AddForeignKeyToOwnerships extends Migration
             $table->foreignId('id_operation')->references('id')->on('operations');
             $table->foreignId('id_neighborhood')->references('id')->on('neighborhoods');
             $table->foreignId('id_user')->references('id')->on('users');
-            $table->foreignId('id_city')->references('id')->on('cities');
         });
     }
 
