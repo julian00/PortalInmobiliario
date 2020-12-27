@@ -39,6 +39,9 @@
                 <a href="{{ route('nosotros') }}" class="{{request()->routeIs('nosotros')? 'active': '' }} block px-1 mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-2">
                     Nosotros
                 </a>
+                <a href="{{ route('contactUs.index') }}" class="{{request()->routeIs('contactUs.index')? 'active': '' }} block px-1 mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-2">
+                    Contactanos
+                </a>
             </div>
             <div>
                 <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>

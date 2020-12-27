@@ -147,7 +147,11 @@ return [
     */
 
     'attributes' => [
+        'email' => 'Correo electronico',
+        'message' => 'mensaje',
+        'name' => 'nombre',
         'neighborhood' => 'Nombre'
+
     ],
 
 ];

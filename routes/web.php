@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\NeighborhoodController;
 use App\Http\Livewire\Neighborhoods;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +37,7 @@ Route::resource('neighborhoods', NeighborhoodController::class);
 //solo para contenido estatico
             //URL,vista
 Route::view('nosotros', 'nosotros')->name('nosotros');
-//Route::get('/admin/items',[ItemController::class,'index'])->name('admin.items');
+
+//ruta para enviar mails
+Route::get('contactUs', [ContactUsController::class,'index'])->name('contactUs.index');
+Route::post('contactUs',[ContactUsController::class,'store'])->name('contactUs.store');
