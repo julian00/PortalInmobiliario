@@ -15,7 +15,7 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->autoIncrement();
-            $table->binary('photo');
+            $table->text('photo_path');
 
             $table->foreignId('id_ownership')->references('id')->on('ownerships');
         });

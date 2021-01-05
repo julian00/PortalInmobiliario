@@ -41,3 +41,7 @@ Route::view('nosotros', 'nosotros')->name('nosotros');
 //ruta para enviar mails
 Route::get('contactUs', [ContactUsController::class,'index'])->name('contactUs.index');
 Route::post('contactUs',[ContactUsController::class,'store'])->name('contactUs.store');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

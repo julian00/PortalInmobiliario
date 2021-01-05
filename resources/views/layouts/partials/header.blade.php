@@ -44,7 +44,19 @@
                 </a>
             </div>
             <div>
-                <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
+                @if (Route::has('login'))
+                    <div class="hidden right-6 px-2 sm:block">
+                        @auth
+                            <a href="{{ url('/home') }}" class="text-sm text-white underline">Home</a>
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-white underline">Login</a>
+            
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-white underline">Register</a>
+                            @endif
+                        @endif
+                    </div>
+                @endif
             </div>
         </div>
     </nav>
