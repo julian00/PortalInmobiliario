@@ -16,7 +16,6 @@ class CreateProvincesTable extends Migration
         Schema::create('provinces', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->autoIncrement();
             $table->string('province',45)->unique();
-            $table->string('slug');
         });
     }
 

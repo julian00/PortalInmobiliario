@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class currenciesTableSeeder extends Seeder
+class currencyTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,6 @@ class currenciesTableSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('currencies')->truncate();
 
-        DB::table('currencies')->insert(['currency'=>"Peso",'symbol'=>'$']);
-        DB::table('currencies')->insert(['currency'=>"Dolar",'symbol'=>'U$S']);
+        DB::table('currencies')->insert(['currency'=>"Peso",'symbol'=>"$"]);
     }
 }

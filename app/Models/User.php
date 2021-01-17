@@ -62,6 +62,6 @@ class User extends Authenticatable
     ];
 
     protected $atributes =[
-        'type' => 3
+        'type' => 3,
     ];
 }

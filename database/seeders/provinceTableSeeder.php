@@ -17,6 +17,6 @@ class provinceTableSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('provinces')->truncate();
 
-        DB::table('provinces')->insert(['province'=>"Buenos Aires",'slug'=>"buenos-aires"]);
+        DB::table('provinces')->insert(['province'=>"Buenos Aires"]);
     }
 }

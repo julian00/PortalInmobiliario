@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class cityTableSeeder extends Seeder
+class orientationTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,8 +15,9 @@ class cityTableSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
-        DB::table('cities')->truncate();
+        DB::table('orientations')->truncate();
 
-        DB::table('cities')->insert(['city'=>"Mar del Plata",'id_province'=>1]);
+        DB::table('orientations')->insert(['orientation'=>"Contrafrente"]);
+        DB::table('orientations')->insert(['orientation'=>"Frente"]);
     }
 }

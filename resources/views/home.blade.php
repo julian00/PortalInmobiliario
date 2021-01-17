@@ -6,7 +6,7 @@
 
 <!--componente Alert-->
 <div class="container mx-auto">
-    <x-alert color="blue">
+    <x-alert color="red">
         <x-slot name="title">
             Titulo Alerta
         </x-slot>
